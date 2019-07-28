@@ -34,7 +34,7 @@ export default {
         .then(res => res[0].meta)
         // return id back with words so that we can use those ids
         // or npm install uuid and use those for keys
-        .then(res => this.words = res.syns)
+        .then(res => this.words = res.syns.flat())
         // if i want to include a def, i will need to rethink the wy the data is fetched and returned as far as how i am parsing and pushing the data into state.
         // defs available at res[0].shortdef
         .catch(err => console.log(err))
