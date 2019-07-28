@@ -3,19 +3,24 @@
     <Header />
     <Form v-on:search-word="searchWord" />
     <Results v-bind:words="words" />
+    <Footer />
   </div>
 </template>
 
 <script>
+import key from './apiKey';
 import Header from './components/layout/Header.vue';
 import Form from './components/Form.vue';
-import key from './apiKey';
+import Results from './components/Results.vue';
+import Footer from './components/layout/Footer.vue';
 
 export default {
   name: 'app',
   components: {
     Header,
-    Form
+    Form,
+    Results,
+    Footer
   },
   data() {
     return {
