@@ -2,7 +2,6 @@
   <form class="Form" @submit="searchWord" >
     <input type="text" name="word" placeholder="find synonyms..." class="form-input" v-model="word" />
     <input type="submit" class="form-submit">
-    <p>{{ word }}</p>
   </form>
 </template>
 
@@ -10,8 +9,10 @@
 
 export default {
   name: 'Form',
-  data: {
-    word: ''
+  data() {
+    return {
+      word: ''
+    }
   },
   methods: {
     searchWord(e) {
@@ -32,6 +33,7 @@ export default {
 
 .form-input {
   border: 2px solid black;
+  font-family: 'Roboto Slab', serif;
   height: 2rem;
   padding-left: 5px;
   text-align: left;
