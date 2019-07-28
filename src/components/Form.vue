@@ -17,7 +17,8 @@ export default {
   methods: {
     searchWord(e) {
       e.preventDefault();
-      this.$emit('search-word', this.word)
+      this.$emit('search-word', this.word);
+      this.word = '';
     }
   }
 }
@@ -27,7 +28,7 @@ export default {
 <style scoped>
 
 .Form {
-  margin: 2rem auto;
+  margin: 1rem auto;
   text-align: center;
 }
 

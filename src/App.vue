@@ -2,8 +2,8 @@
   <div id="app">
     <Header />
     <Form v-on:search-word="searchWord" />
+    <SearchedWord v-bind:word="searchedWord" />
     <Results v-bind:words="words" v-on:search-word="searchWord" />
-    <Footer />
   </div>
 </template>
 
@@ -11,24 +11,27 @@
 import key from './apiKey';
 import Header from './components/layout/Header.vue';
 import Form from './components/Form.vue';
+import SearchedWord from './components/SearchedWord.vue';
 import Results from './components/Results.vue';
-import Footer from './components/layout/Footer.vue';
 
 export default {
   name: 'app',
   components: {
     Header,
     Form,
-    Results,
-    Footer
+    SearchedWord,
+    Results
   },
   data() {
     return {
+      searchedWord: '',
       words: []
     }
   },
+  props: ['word'],
   methods: {
     searchWord(word) {
+      this.searchedWord = word;
       fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${key}`)
         .then(res => res.json())
         .then(res => res[0].meta)
