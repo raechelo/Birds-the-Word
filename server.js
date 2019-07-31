@@ -11,6 +11,6 @@ const app = express();
 
 app.use('/', serveStatic(path.join(__dirname, '/dist/')))
 
-app.listen(port);
+app.listen(process.env.port || 8080);
 
 console.log('server started 🚀')
