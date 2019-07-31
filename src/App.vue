@@ -3,7 +3,11 @@
     <Header />
     <Form v-on:search-word="searchWord" />
     <SearchedWord v-bind:word="searchedWord" />
-    <Results v-bind:words="words" v-on:search-word="searchWord" />
+    <!-- <Results v-bind:words="words" v-on:search-word="searchWord" />
+      <div> -->
+    <div v-for="word in words" v-bind:key="word.uuid" class="results">
+      <Word v-on:search-word="searchWord" v-bind:word="word" />
+    </div>
   </div>
 </template>
 
@@ -12,7 +16,9 @@ import key from './apiKey';
 import Header from './components/layout/Header.vue';
 import Form from './components/Form.vue';
 import SearchedWord from './components/SearchedWord.vue';
-import Results from './components/Results.vue';
+import Word from './components/Word.vue';
+// import Results from './components/Results.vue';
+import uuid from 'uuid';
 
 export default {
   name: 'app',
@@ -20,7 +26,8 @@ export default {
     Header,
     Form,
     SearchedWord,
-    Results
+    Word
+    // Results
   },
   data() {
     return {
@@ -31,16 +38,30 @@ export default {
   props: ['word'],
   methods: {
     searchWord(word) {
-      this.searchedWord = word;
+      console.log(typeof word)
+      typeof word === 'object' ? word = word.word : word = word
+      this.searchedWord = word
+
       fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${key}`)
         .then(res => res.json())
-        .then(res => res[0].meta)
-        // return id back with words so that we can use those ids
-        // or npm install uuid and use those for keys
-        .then(res => this.words = res.syns.flat().sort())
-        // if i want to include a def, i will need to rethink the wy the data is fetched and returned as far as how i am parsing and pushing the data into state.
-        // defs available at res[0].shortdef
+        .then(res => this.words = res)
+        .then(res => this.addId())
         .catch(err => console.log(err))
+    },
+    addId() {
+      this.words = this.words.map(word => {
+        return {
+          word: word.hwi.hw,
+          def: word.shortdef,
+          type: word.fl,
+          syns: word.meta.syns.flat().map(syn => {
+           return {
+              word: syn,
+              id: uuid.v4()
+            }
+          })
+        }
+      })
     }
   }
 }
