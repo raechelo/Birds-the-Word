@@ -38,7 +38,6 @@ export default {
       console.log(typeof word)
       typeof word === 'object' ? word = word.word : word = word
       this.searchedWord = word
-      console.log(process.env.VUE_APP_THESAURUS_KEY)
       fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${process.env.VUE_APP_THESAURUS_KEY}`)
         .then(res => res.json())
         .then(res => this.words = res)
