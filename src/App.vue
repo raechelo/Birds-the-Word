@@ -12,12 +12,11 @@
 </template>
 
 <script>
-import key from './apiKey';
+import thesaurus_key from './apiKey';
 import Header from './components/layout/Header.vue';
 import Form from './components/Form.vue';
 import SearchedWord from './components/SearchedWord.vue';
 import Word from './components/Word.vue';
-// import Results from './components/Results.vue';
 import uuid from 'uuid';
 
 export default {
@@ -27,7 +26,6 @@ export default {
     Form,
     SearchedWord,
     Word
-    // Results
   },
   data() {
     return {
@@ -42,7 +40,7 @@ export default {
       typeof word === 'object' ? word = word.word : word = word
       this.searchedWord = word
 
-      fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${key}`)
+      fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${thesaurus_key}`)
         .then(res => res.json())
         .then(res => this.words = res)
         .then(res => this.addId())
