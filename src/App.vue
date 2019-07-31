@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import thesaurus_key from './apiKey';
 import Header from './components/layout/Header.vue';
 import Form from './components/Form.vue';
 import SearchedWord from './components/SearchedWord.vue';
