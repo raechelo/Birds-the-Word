@@ -14,8 +14,6 @@ import Form from './components/Form.vue';
 import SearchedWord from './components/SearchedWord.vue';
 import Results from './components/Results.vue';
 
-let key = process.env.thesaurus_key
-
 export default {
   name: 'app',
   components: {
