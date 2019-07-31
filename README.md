@@ -14,4 +14,7 @@ The developer was to learn how to use Vue without instruction and help, using on
 
 ##  🦢 Screenshots 🦢
 
-[![screencapture-localhost-8080-2019-07-28-14-42-37-1.png](https://i.postimg.cc/FsvJ5Cs1/screencapture-localhost-8080-2019-07-28-14-42-37-1.png)](https://postimg.cc/grM03DhP)
+[![screencapture-localhost-8080-2019-07-31-11-43-33.png](https://i.postimg.cc/1tbWjwvW/screencapture-localhost-8080-2019-07-31-11-43-33.png)](https://postimg.cc/34CCy45p)
+
+
+[https://giphy.com/gifs/WQI0YsGJDAyfzaOfCW/html5](https://media.giphy.com/media/WQI0YsGJDAyfzaOfCW/giphy.gif)
