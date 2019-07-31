@@ -3,7 +3,7 @@
     <img src='./../../assets/bird.svg' alt="bird" class="header-bird">
     <img src='./../../assets/flamingo.svg' alt="flamingo" class="header-bird">
     <img src='./../../assets/toucan.svg' alt="toucan" class="header-bird">
-    <h1 class="header">Bird is the Word</h1>
+    <h1 class="header">Bird's the Word</h1>
     <img src='./../../assets/penguin.svg' alt="penguin" class="header-bird">
     <img src='./../../assets/humming-bird.svg' alt="humming-bird" class="header-bird">
     <img src='./../../assets/owl.svg' alt="owl" class="header-bird">
