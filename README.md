@@ -2,7 +2,7 @@
 
 ...is an app that allows users to search a word and see synonyms of that word. Afterwards, users can click on any of the resulting synonyms to see synonyms of the new word!
 
-You can view the app [here]()!
+You can view the app [here](https://master.d285ia4qzyjh5o.amplifyapp.com/)!
 
 ## 🦚 Stack 🦚
 - Vue
